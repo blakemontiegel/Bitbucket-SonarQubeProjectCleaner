@@ -203,6 +203,7 @@ Follow these steps to enable communication between the Bitbucket Server and Sona
 
 -   **Create a Docker Network:**
     -   `docker network create bitbucket-sonarqube-network`
+    -   Replace with desired name
 -   **Connect the Containers to the Network:**
     -   Find the **container ID's** using
         -   `docker ps`
@@ -210,6 +211,10 @@ Follow these steps to enable communication between the Bitbucket Server and Sona
         -   `docker network connect bitbucket-sonarqube-network bitbucketID`
         -   `docker network connect bitbucket-sonarqube-network sonarqubeID`
     -   Replace **bitbucketID** and **sonarqubeID** with actual **container ID's**
+-   **Verify Network**
+    - Run this command and you should see both containers:
+        - `docker network inspect bitbucket-sonarqube-network`
+    - Replace **bitbucket-sonarqube-network** with your desired network name!!!!! 
 
 ## 3. Access and Configure the Applications
 
