@@ -170,7 +170,7 @@ To test the plugin, you can use Docker containers to run Bitbucket server and So
 
 Follow these steps to set up Docker containers for Bitbucket Server and Sonarqube
 
-- **Install Docker**
+- **Install Docker!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**
     - Click this to install [Docker](https://www.docker.com/) follow the instructions it gives 
 
 -   **Pull Docker Images:**
@@ -180,7 +180,7 @@ Follow these steps to set up Docker containers for Bitbucket Server and Sonarqub
             -   `docker pull atlassian/bitbucket-server:8.9.10`
     -   SonarQube Community Edition:
         -   The recommended version is Community Edition **10**. Use the following command to pull the Docker image:
-            -   `docker pull sonarqube:10`
+            -   `docker pull sonarqube:10-community!!!!!!!!!!!!!!!!!!!!!!!!!!!`
 -   **Create Docker Volumes:**
 
     -   Bitbucket Server:
