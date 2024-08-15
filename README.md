@@ -193,7 +193,7 @@ Follow these steps to set up Docker containers for Bitbucket Server and Sonarqub
     -   Bitbucket Server:
         -   `docker run -v bitbucketVolume:/var/atlassian/application-data/bitbucket --name="bitbucketX" -d -p 7990:7990 -p 7999:7999 atlassian/bitbucket-server:8.9.10`
     -   SonarQube Community Edition:
-        -   `docker run -v sonarqubeVolume:/opt/sonarqube/data --name="sonarqubeX" -d -p 9000:9000 sonarqube:10`
+        -   `docker run -v sonarqubeVolume:/opt/sonarqube/data --name="sonarqubeX" -d -p 9000:9000 sonarqube:10-community!!!!!!!!!`
     -   Replace name with **preferred container names** (avoid special characters as this will mess with URI generation in plugin)
     -   Adjust **port numbers** if necessary
 
