@@ -3,12 +3,12 @@ Setting Up the Build Environment
 
 To develop and deploy the SonarQube Repo Cleaner Plugin, you'll need to set up your build environment. Follow the steps below to install and configure the necessary tools and set up the plugin
 
-1\. Install Atlassian Plugin SDK
+## 1. Install Atlassian Plugin SDK
 --------------------------------
 
 Important Note
 
-The Atlassian Plugin SDK may suggest using Java 8 during installation. However, this plugin is written with **Java 11** in mind. Ensure that you have Java 11 installed and configured as JAVA_HOME to avoid any compatibility issues
+`The Atlassian Plugin SDK may suggest using Java 8 during installation. However, this plugin is written with Java 11 in mind. Ensure that you have Java 11 installed and configured as JAVA_HOME to avoid any compatibility issues`
 
 The Atlassian Plugin SDK simplifies the build process with specific commands tailored for Atlassian products. Downloading and installing the SDK provides access to these commands, simplifying plugin development and packaging
 
@@ -17,7 +17,7 @@ The Atlassian Plugin SDK simplifies the build process with specific commands tai
 -   **Linux or macOS:**
     -   [Download and install the Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/) by following the detailed steps provided for Linux or macOS systems
 
-2\. Alternative setup: Apache Maven and Java
+## 2. Alternative setup: Apache Maven and Java
 --------------------------------------------
 
 If you prefer not to use the Atlassian Plugin SDK, you can set up your environment manually by installing Apache Maven and Java
@@ -31,14 +31,14 @@ If you prefer not to use the Atlassian Plugin SDK, you can set up your environme
     -   Download and install [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) if you haven't already
     -   Ensure that JAVA_HOME is set to the JDK installation directory and \bin is set in Path
 
-3\. Building the Plugin
+## 3. Building the Plugin
 -----------------------
 
 After setting up your build environment, you first need to obtain the project files
 
 -   **Clone the Project:**
 
-    1.  Clone the project repository from [Bitbucket](https://bitbucket.dice.ste-is.com/projects/SDO/repos/bitbucket-sonarqube-plugin/browse)
+    1.  Clone the repository
 -   **Using Atlassian Plugin SDK:**
     1.  Open a terminal or command prompt
 
@@ -63,7 +63,7 @@ After setting up your build environment, you first need to obtain the project fi
 
         -   `mvn clean package`
 
-4\. Installing the Plugin in Bitbucket
+## 4. Installing the Plugin in Bitbucket
 --------------------------------------
 
 Once the JAR file is created, you can install it into Bitbucket. (For Bitbucket version 8.9.10 and later uploading plugins is disable by default so we must enable it if it hasn't been already)
@@ -77,7 +77,7 @@ Once the JAR file is created, you can install it into Bitbucket. (For Bitbucket 
     2.  Click on **Upload app**
     3.  Drag and drop the JAR file from the `target/` directory into the upload area and click **Upload**
 
-5\. Configuring Logging
+5. Configuring Logging
 -----------------------
 
 To ensure that the plugin logs its activities properly, you need to enable debug logging in Bitbucket
@@ -88,7 +88,7 @@ To ensure that the plugin logs its activities properly, you need to enable debug
 -   **Access Logs:**
     -   Logs can be found in `atlassian-bitbucket.log` file located at `/var/atlassian/application-data/bitbucket/shared/log`
 
-6\. Enable Plugin
+## 6. Enable Plugin
 -----------------
 
 The plugin will be disable by default on the first install
@@ -96,6 +96,11 @@ The plugin will be disable by default on the first install
 -   **Enable Plugin**
 
     1.  Navigate to desired repo
-    2.  **Settings > Hooks > **under **Post Receive**
+    2.  **Settings** > **Hooks** > under **Post Receive**
     3.  Enable **Sonarqube Repo Cleaner**
 -   This can be done at the Project level too if wanted
+-----------------
+
+## Additional Information
+
+For detailed documentation and further information, please visit [Bitbucket-SonarQube Project Cleaner Plugin](https://docs.ste-is.com/display/SYNTE/Bitbucket-SonarQube+Project+Cleaner+Plugin).
