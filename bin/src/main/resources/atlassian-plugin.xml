@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="bitbucketSonarqubeRepoCleaner"/>  
+  <!-- add our web resources -->  
+  <web-resource key="bitbucketSonarqubeRepoCleaner-resources" name="bitbucketSonarqubeRepoCleaner Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <resource type="download" name="bitbucketSonarqubeRepoCleaner.css" location="/css/bitbucketSonarqubeRepoCleaner.css"/>  
+    <resource type="download" name="bitbucketSonarqubeRepoCleaner.js" location="/js/bitbucketSonarqubeRepoCleaner.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>bitbucketSonarqubeRepoCleaner</context> 
+  </web-resource>  
+  <repository-hook key="sonarqube-repo-cleaner" name="Sonarqube Repo Cleaner" i18n-name-key="sonarqube-repo-cleaner.name" class="sonarqube.repo.delete.SonarqubeRepoCleaner"> 
+    <description key="sonarqube-repo-cleaner.description">The Sonarqube Repo Cleaner Plugin</description>  
+    <icon>icon-example.png</icon>  
+    <config-form name="Sonarqube Repo Cleaner Config" key="sonarqube-repo-cleaner-config"> 
+      <view>sonarqube.repo.delete.sonarquberepocleaner.view</view>  
+      <directory location="/static/"/> 
+    </config-form> 
+  </repository-hook>
+</atlassian-plugin>

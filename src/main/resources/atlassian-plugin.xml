@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin name="${project.name}" key="${atlassian.plugin.key}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+    <version>${project.version}</version>  
+    <param name="plugin-icon">images/pluginIcon.png</param>  
+    <param name="plugin-logo">images/pluginLogo.png</param> 
+  </plugin-info>  
+  <!-- add our i18n resource -->  
+  <resource type="i18n" name="i18n" location="bitbucketSonarqubeRepoCleaner"/>  
+
+  <!-- add our web resources -->  
+  <web-resource key="bitbucketSonarqubeRepoCleaner-resources" name="bitbucketSonarqubeRepoCleaner Web Resources"> 
+    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <dependency>com.atlassian.auiplugin:aui</dependency>
+    <resource type="download" name="bitbucketSonarqubeRepoCleaner.css" location="/css/bitbucketSonarqubeRepoCleaner.css"/>  
+    <resource type="download" name="bitbucketSonarqubeRepoCleaner.js" location="/js/bitbucketSonarqubeRepoCleaner.js"/>  
+    <resource type="download" name="images/" location="/images"/>  
+    <context>bitbucketSonarqubeRepoCleaner</context> 
+  </web-resource>  
+
+  <!-- Existing repository hook definition-->
+  <repository-hook key="sonarqube-repo-cleaner" name="Sonarqube Project Cleaner" i18n-name-key="sonarqube-repo-cleaner.name" class="sonarqube.repo.delete.SonarqubeRepoCleaner"> 
+    <description key="sonarqube-repo-cleaner.description">Deletes merged branches from Sonarqube</description>  
+    <icon>icon-example.png</icon>  
+    <!-- <config-form name="Sonarqube Repo Cleaner Config" key="sonarqube-repo-cleaner-config"> 
+      <view>sonarqube.repo.delete.sonarquberepocleaner.view</view>  
+      <directory location="/static/"/> 
+    </config-form>  -->
+    <scopes>
+      <scope>project</scope>
+      <scope>repository</scope>
+    </scopes>
+  </repository-hook>
+</atlassian-plugin>
