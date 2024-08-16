@@ -105,7 +105,7 @@ After setting up your build environment, you first need to obtain the project fi
 
     2.  Navigate to the directory of where the plugin was cloned
 
-    3.  Configure **config.properties **before running package command
+    3.  Configure **config.properties** before running package command
         1.  Setup **HTTP Read Token** for Bitbucket
         2.  Setup **HTTP User Token** for SonarQube
         3.  Ensure the domains are properly configured
