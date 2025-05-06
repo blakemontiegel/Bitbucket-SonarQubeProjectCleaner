@@ -126,7 +126,7 @@ After setting up your build environment, you first need to obtain the project fi
 
 ## 4. Installing the Plugin in Bitbucket
 
-Once the JAR file is created, you can install it into Bitbucket. (For Bitbucket version 8.9.10 and later uploading plugins is disable by default so we must enable it if it hasn't been already)
+Once the JAR file is created, you can install it into Bitbucket. (For Bitbucket version 8.9.10 and later uploading plugins is disabled by default so we must enable it if it hasn't been already)
 
 -   **Enable Plugin Upload (Can be skipped for versions 8.9.9 and earlier):**
     1.  Open or create the `bitbucket.properties` file located in the servers file system at `/var/atlassian/application-data/bitbucket/shared/`
@@ -149,7 +149,7 @@ To ensure that the plugin logs its activities properly, you need to enable debug
 
 ## 6. Enable Plugin
 
-The plugin will be disable by default on the first install
+The plugin will be disabled by default on the first install
 
 -   **Enable Plugin**
 
@@ -237,7 +237,7 @@ To enable Bitbucket Integration and analysis with SonarQube and configure local 
     1.  Navigate to **Administration > DevOps Platform Integrations > Bitbucket**
     2.  Click **Create Configuration**
     3.  Enter a **Name** for the configuration
-    4.  Set the **Server URL **to **http://bitbucketX:7990/**, replacing **bitbucketX **and **port number** with the name of your **container** and **port number**
+    4.  Set the **Server URL** to **http://bitbucketX:7990/**, replacing **bitbucketX **and **port number** with the name of your **container** and **port number**
     5.  Provide an **HTTP Token** from the Bitbucket instance with at least read permissions
     6.  Save
 -   **Add a New Project**
@@ -246,7 +246,7 @@ To enable Bitbucket Integration and analysis with SonarQube and configure local 
     2.  Select any available repos you want to scan
     3.  For testing purposes we can manually set the project key to groupID:artifactID:branch_name
     4.  You could set up Maven analysis and include certain dependencies in the repos pom.xml which would create new projects in sonarqube anytime a new branch is created, but I wasn't familiar with how to do this
-        1.  To work around this, anytime you create a new branch in Bitbucket create a project in Sonarqube with the project key **groupID:artifactID:branch_name **where **groupID** and **artifactID** are set in the **pom.xml** of the repo
+        1.  To work around this, anytime you create a new branch in Bitbucket create a project in Sonarqube with the project key **groupID:artifactID:branch_name** where **groupID** and **artifactID** are set in the **pom.xml** of the repo
         2.  In the future, we should set up step 4 to closely mimic what happens with the real Bitbucket Server
 
 ## 5. Install Plugin
